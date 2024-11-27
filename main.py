@@ -7,7 +7,18 @@ listaDeExperimentos = [
 
 #Funcion para agregar un nuevo experimento
 def agregar_experimento():
-    pass
+    
+    nombre = input("Ingrese el nombre del experimento: ")
+    fecha = input("Ingrese la fecha del experimento: ")
+    tipo = input("Ingrese el tipo de expeimento (Quimica, Biologia, Fisica): ")
+    
+    try:
+        datetime.datetime.strptime(fecha, "%d/%m/%Y") #Validar la fecha
+        resultados = list(map(int, input("Ingrese los resultados numericos separados por comeas: ").split(",")))
+        listaDeExperimentos.append([nombre,fecha,tipo,resultados])
+        print("Experimentos agregados con exito")
+    except:
+        print("Error: Entrada no valida. intenta de nuevo")
 
 #Funcion para eliminar un experimento
 def eliminar_experimento():
@@ -32,6 +43,7 @@ def generar_informe():
 #Funcion para mostrar el menu
 def mostar_menu():
     print("==== Menu Principal ====")
+    print("========================")
     print("1. Agregar experimento")
     print("2. Visualizar experimentos")
     print("3. Eliminar experimentos")
@@ -43,6 +55,7 @@ def mostar_menu():
 #Funcion principal
 def main():
     while True:
+        print("========================")
         mostar_menu()
         try:
             opcion = int(input("Ingrese una opcion: "))
