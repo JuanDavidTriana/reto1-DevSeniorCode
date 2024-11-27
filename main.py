@@ -31,10 +31,18 @@ def generar_informe():
 
 #Funcion para mostrar el menu
 def mostar_menu():
-    pass
+    print("==== Menu Principal ====")
+    print("1. Agregar experimento")
+    print("2. Visualizar experimentos")
+    print("3. Eliminar experimentos")
+    print("4. Calcular estadisticas")
+    print("5. Comparar experimentos")
+    print("6. Generar informe")
+    print("7. Salir")
 
 #Funcion principal
 def main():
-    pass
+    while True:
+        mostar_menu()
 
 main()
