@@ -44,5 +44,24 @@ def mostar_menu():
 def main():
     while True:
         mostar_menu()
+        try:
+            opcion = int(input("Ingrese una opcion: "))
+            if opcion == 1:
+                agregar_experimento()
+            elif opcion == 2:
+                visulizar_experimentos()
+            elif opcion == 3:
+                eliminar_experimento()
+            elif opcion == 4:
+                calcular_estadisticas()
+            elif opcion == 5:
+                comprar_experimentos()
+            elif opcion == 6:
+                generar_informe()
+            elif opcion == 7:
+                print("Gracias por usar el programa ¡Vuelva pronto!")
+                break
+        except:
+            print("Error: Entrada no valida. intenta de nuevo")
 
 main()
